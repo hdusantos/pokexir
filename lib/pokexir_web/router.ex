@@ -7,6 +7,8 @@ defmodule PokexirWeb.Router do
 
   scope "/api", PokexirWeb do
     pipe_through :api
+
+    resources "/trainers", TrainersController, only: [:create, :show, :delete, :update]
   end
 
   # Enables LiveDashboard only for development
