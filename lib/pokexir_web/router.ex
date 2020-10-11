@@ -24,4 +24,10 @@ defmodule PokexirWeb.Router do
       live_dashboard "/dashboard", metrics: PokexirWeb.Telemetry
     end
   end
+
+  scope "/", PokexirWeb do
+    pipe_through :api
+
+    get "/", WelcomeController, :index
+  end
 end
